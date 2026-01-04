@@ -1,0 +1,24 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+gemspec
+
+gem 'puma'
+gem 'sprockets-rails'
+gem 'sqlite3'
+
+gem 'rswag-specs', '~> 2.15'
+
+# Engine dependencies
+# TODO: Uncomment when these engines are created
+# gem 'users_engine', path: '../users'
+
+# Shared dependencies
+# TODO: Uncomment when shared gems are available
+# gem 'bg_cop', path: '../../shared/bg-cop'
+# gem 'stakes', path: '../../shared/stakes'
+
+group :test, :development do
+  gem 'byebug', '~> 11.1'
+  gem 'timecop', '~> 0.9.10'
+end

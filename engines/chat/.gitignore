@@ -1,0 +1,30 @@
+.bundle/
+log/*.log
+pkg/
+test/dummy/db/*.sqlite3
+test/dummy/db/*.sqlite3-journal
+test/dummy/db/*.sqlite3-*
+test/dummy/log/*.log
+test/dummy/storage/
+test/dummy/tmp/
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+test/dummy/config/master.key
+test/dummy/config/credentials/*.key
+
+# RSpec
+spec/examples.txt
+
+# IDE
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Gem
+*.gem

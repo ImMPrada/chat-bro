@@ -1,0 +1,16 @@
+# TODO: Uncomment when bg_cop is available
+# inherit_gem:
+#   bg_cop: 'lib/rubocop/config/.rubocop.yml'
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.3
+  Exclude:
+    - 'bin/**/*'
+    - 'test/dummy/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+
+# Basic style rules
+Style/FrozenStringLiteralComment:
+  Enabled: false
