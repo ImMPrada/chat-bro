@@ -21,7 +21,6 @@ Defines user roles and their feature permissions using feature patterns.
   feature_patterns:
     - users_engine
     - personas_engine
-    - projects_engine
     - chat_engine
 ```
 
@@ -34,28 +33,6 @@ Defines work positions (job titles) with regex patterns for automatic matching.
   title_matches:
     - gerente\s+administrativ(o|a)
     - coordinadora?\s+administrativ(o|a)
-```
-
-### `project_statuses.yml`
-Defines administrative and technical project statuses with colors and ordering.
-
-**Structure:**
-```yaml
-- type: administrative
-  name: En ejecución
-  color: '#EEF36A'
-  step: 1
-```
-
-### `responsibilities.yml`
-Defines project responsibilities with colors and scope levels.
-
-**Structure:**
-```yaml
-- name: "Líder de proyecto"
-  color: "#7161EF"
-  scope_levels:
-    - furthest_parent
 ```
 
 ## Usage

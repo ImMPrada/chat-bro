@@ -9,16 +9,6 @@ PATH
       wisper (~> 3.0)
 
 PATH
-  remote: ../../nebula-project/bro-garden-on-rails/engines/projects
-  specs:
-    projects_engine (1.8.4)
-      jbuilder (~> 2.12)
-      rails (>= 7.2.2)
-      uuid7 (~> 0.2.0)
-      validate_url (~> 1.0.15)
-      wisper (~> 3.0)
-
-PATH
   remote: ../../nebula-project/bro-garden-on-rails/engines/users
   specs:
     users_engine (1.4.0)
@@ -262,7 +252,6 @@ GEM
     psych (5.3.1)
       date
       stringio
-    public_suffix (7.0.2)
     puma (7.1.0)
       nio4r (~> 2.0)
     pundit (2.5.2)
@@ -341,9 +330,6 @@ GEM
     useragent (0.16.11)
     uuid7 (0.2.0)
       zeitwerk (~> 2.4)
-    validate_url (1.0.15)
-      activemodel (>= 3.0.0)
-      public_suffix
     version_gem (1.1.9)
     websocket-driver (0.8.0)
       base64
@@ -375,7 +361,6 @@ DEPENDENCIES
   jbuilder (~> 2.11)
   mysql2 (~> 0.5)
   personas_engine!
-  projects_engine!
   puma (>= 5.0)
   rack-cors
   rails (~> 7.2.2)

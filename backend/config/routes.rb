@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # Mount engines
   mount UsersEngine::Engine => "/users_engine"
   mount PersonasEngine::Engine => "/personas_engine"
-  mount ProjectsEngine::Engine => "/projects_engine"
 
   # ChatEngine will be created later
   # mount ChatEngine::Engine => "/chat_engine"

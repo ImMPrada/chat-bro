@@ -48,31 +48,6 @@ work_positions_data.each do |position_data|
   puts "✅ Work position created: #{position.code}"
 end
 
-# Load project statuses from YAML
-puts "\n📊 Loading project statuses from data/project_statuses.yml..."
-project_statuses_data = YAML.load_file(Rails.root.join("data", "project_statuses.yml"))
-
-project_statuses_data.each do |status_data|
-  klass = status_data["type"] == "technical" ? ProjectsEngine::TechnicalStatus : ProjectsEngine::AdministrativeStatus
-  status = klass.find_or_create_by!(name: status_data["name"]) do |s|
-    s.color = status_data["color"]
-    s.step = status_data["step"]
-  end
-  puts "✅ Project status created: #{status.name} (#{status_data['type']})"
-end
-
-# Load responsibilities from YAML
-puts "\n🎯 Loading responsibilities from data/responsibilities.yml..."
-responsibilities_data = YAML.load_file(Rails.root.join("data", "responsibilities.yml"))
-
-responsibilities_data.each do |resp_data|
-  responsibility = ProjectsEngine::Responsibility.find_or_create_by!(name: resp_data["name"]) do |r|
-    r.color = resp_data["color"]
-    r.scope_levels = resp_data["scope_levels"]
-  end
-  puts "✅ Responsibility created: #{responsibility.name}"
-end
-
 # Create test user
 puts "\n👤 Creating test user..."
 role_nivel_1 = UsersEngine::Role.find_by!(code: "nivel_1")

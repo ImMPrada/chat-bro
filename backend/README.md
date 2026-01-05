@@ -4,7 +4,7 @@ Rails 7.2.2 API-only backend for the Chat-Bro project - a modern chat applicatio
 
 ## Overview
 
-This backend uses a modular engine-based architecture, mounting pre-built engines from [bro-garden-on-rails](https://github.com/bro-garden/bro-garden-on-rails) for user management, personas, and projects functionality.
+This backend uses a modular engine-based architecture, mounting pre-built engines from [bro-garden-on-rails](https://github.com/bro-garden/bro-garden-on-rails) for user management and personas functionality.
 
 ### Tech Stack
 
@@ -46,7 +46,6 @@ The API will be available at `http://localhost:3001`
 |--------|------------|---------|
 | **UsersEngine** | `/users_engine` | User management, OAuth2 authentication, roles & features |
 | **PersonasEngine** | `/personas_engine` | Companies, people, and work positions |
-| **ProjectsEngine** | `/projects_engine` | Projects, statuses, and responsibilities |
 
 All engines are sourced from `bro-garden-on-rails` via local path dependencies.
 
@@ -114,14 +113,6 @@ GET  /personas_engine/v1/companies            # List companies
 POST /personas_engine/v1/companies            # Create company
 ```
 
-### Projects (ProjectsEngine)
-```
-GET  /projects_engine/v1/projects             # List projects
-POST /projects_engine/v1/projects             # Create project
-GET  /projects_engine/v1/project_statuses     # List statuses
-GET  /projects_engine/v1/responsibilities     # List responsibilities
-```
-
 See full route list: `rails routes`
 
 ## Database
@@ -132,7 +123,6 @@ The database includes tables from all mounted engines:
 - Users, roles, features (UsersEngine)
 - OAuth applications and tokens (Doorkeeper)
 - Companies, people, work positions (PersonasEngine)
-- Projects, statuses, responsibilities (ProjectsEngine)
 
 ### Migrations
 
@@ -163,8 +153,6 @@ rails db:reset
 
 - `data/roles.yml` - User roles and feature permissions
 - `data/work_positions.yml` - Job positions with regex patterns
-- `data/project_statuses.yml` - Administrative and technical statuses
-- `data/responsibilities.yml` - Project responsibility types
 
 ## Development
 
@@ -206,7 +194,6 @@ bin/rubocop
 ```bash
 rails users_engine:install:migrations
 rails personas_engine:install:migrations
-rails projects_engine:install:migrations
 rails db:migrate
 ```
 
@@ -323,35 +310,6 @@ rake personas_engine:work_positions:assign_to_user[initial_position_code,target_
 rake personas_engine:setup
 ```
 
-### ProjectsEngine Tasks
-
-#### Project Statuses
-```bash
-# Create project statuses from YAML
-rake projects_engine:project_statuses:create[yaml_path]
-# Example: rake projects_engine:project_statuses:create[data/project_statuses.yml]
-```
-
-#### Responsibilities
-```bash
-# Create responsibilities from YAML
-rake projects_engine:responsibilities:create[yaml_path]
-# Example: rake projects_engine:responsibilities:create[data/responsibilities.yml]
-
-# Change responsibility name
-rake projects_engine:responsibilities:change_name[initial_name,new_name]
-# Example: rake projects_engine:responsibilities:change_name["Old Name","New Name"]
-
-# Merge duplicate responsibilities
-rake projects_engine:responsibilities:merge_names[initial_name,new_name]
-```
-
-#### Setup
-```bash
-# Setup projects engine (creates default data)
-rake projects_engine:setup
-```
-
 ### Background Jobs (Delayed Job)
 
 ```bash
@@ -420,7 +378,7 @@ gem "users_engine", path: "../../nebula-project/bro-garden-on-rails/engines/user
 **Current Phase**: Phase 1 Complete ✅
 
 - ✅ Rails application setup
-- ✅ Engine integration (users, personas, projects)
+- ✅ Engine integration (users, personas)
 - ✅ OAuth2 authentication configured
 - ✅ Database schema and seeds
 - ✅ CORS enabled for frontend

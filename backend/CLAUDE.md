@@ -27,13 +27,7 @@ The application uses a modular engine-based architecture with the following engi
    - People management
    - Work positions
 
-3. **ProjectsEngine** (`/projects_engine`)
-   - Projects management
-   - Project statuses (Administrative & Technical)
-   - Responsibilities
-   - Project responsibles
-
-4. **Stakes** (shared library)
+3. **Stakes** (shared library)
    - Common utilities (Uuidable, Colorable, etc.)
 
 ## Project Structure
@@ -54,8 +48,6 @@ backend/
 ├── data/                   # Reference data (YAML)
 │   ├── roles.yml          # User roles and feature permissions
 │   ├── work_positions.yml # Job positions with regex patterns
-│   ├── project_statuses.yml # Project status definitions
-│   ├── responsibilities.yml # Project responsibilities
 │   └── README.md          # Data directory documentation
 ├── db/
 │   ├── migrate/           # Migrations (from engines)
@@ -117,8 +109,6 @@ Seeds are loaded from YAML files in the `data/` directory:
 
 - **Roles**: User roles with feature permissions
 - **Work Positions**: Job titles with regex matching patterns
-- **Project Statuses**: Administrative and technical statuses with colors
-- **Responsibilities**: Project responsibility types
 - **OAuth App**: Frontend OAuth application credentials
 - **Test User**: `test@chatbro.com` (passwordless auth)
 
@@ -170,14 +160,6 @@ GET    /personas_engine/v1/people          # List people
 GET    /personas_engine/v1/work_positions  # List work positions
 ```
 
-### ProjectsEngine
-```
-GET    /projects_engine/v1/projects        # List projects
-POST   /projects_engine/v1/projects        # Create project
-GET    /projects_engine/v1/responsibilities # List responsibilities
-GET    /projects_engine/v1/project_statuses # List statuses
-```
-
 ## CORS Configuration
 
 CORS is enabled for the Next.js frontend running on `http://localhost:3000` (configurable via `FRONTEND_URL` env var).
@@ -222,7 +204,7 @@ rails db:reset
 
 ✅ Rails 7.2.2 API-only application created
 ✅ MySQL database configured
-✅ Three engines mounted (users, personas, projects)
+✅ Two engines mounted (users, personas)
 ✅ OAuth2 authentication configured (1-month tokens)
 ✅ CORS enabled for Next.js frontend
 ✅ Database seeded with reference data from YAML files

@@ -22,7 +22,6 @@ gem "bootsnap", require: false
 # Engines (path dependencies for local development)
 gem "users_engine", path: "../../nebula-project/bro-garden-on-rails/engines/users"
 gem "personas_engine", path: "../../nebula-project/bro-garden-on-rails/engines/personas"
-gem "projects_engine", path: "../../nebula-project/bro-garden-on-rails/engines/projects"
 gem "stakes", path: "../../nebula-project/bro-garden-on-rails/shared/stakes"
 
 group :development, :test do

@@ -2,5 +2,4 @@
   feature_patterns:
     - users_engine
     - personas_engine
-    - projects_engine
     - chat_engine
