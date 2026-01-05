@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+set -e
+
+echo "🚀 Setting up Chat-Bro backend..."
+echo ""
+
+# Install dependencies
+echo "📦 Installing gems..."
+bundle install
+
+# Setup database
+echo "🗄️  Setting up database..."
+rails db:create
+rails db:migrate
+rails db:seed
+
+echo ""
+echo "✅ Setup complete!"
+echo ""
+echo "To start the server:"
+echo "  rails s -p 3001"
+echo ""

@@ -1,0 +1,9 @@
+- name: "Líder de proyecto"
+  color: "#7161EF"
+  scope_levels:
+    - furthest_parent
+- name: "Ingeniero de diseño"
+  color: "#05B2DC"
+  scope_levels:
+    - subproject
+    - furthest_parent

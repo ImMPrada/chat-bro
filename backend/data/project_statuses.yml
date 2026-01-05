@@ -1,0 +1,34 @@
+- type: administrative
+  name: En ejecución
+  color: '#EEF36A'
+  step: 1
+
+- type: administrative
+  name: Finalizado
+  color: '#3C91E6'
+  step: 2
+
+- type: administrative
+  name: Inactivo
+  color: '#3F3047'
+  step: 3
+
+- type: administrative
+  name: Liquidado
+  color: '#EE4266'
+  step: 4
+
+- type: technical
+  name: En ejecución
+  color: '#EEF36A'
+  step: 1
+
+- type: technical
+  name: Inactivo
+  color: '#3F3047'
+  step: 2
+
+- type: technical
+  name: Completo
+  color: '#EE4266'
+  step: 3

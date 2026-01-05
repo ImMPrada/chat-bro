@@ -1,0 +1,38 @@
+- code: admin
+  title_matches:
+    - gerente\s+administrativ(o|a)
+    - coordinadora?\s+administrativ(o|a)
+    - subdirectora?\s+de\s+proyectos
+    - directora?\s+de\s+proyectos
+    - gerente\s+general
+    - gerente\s+de\s+proyectos
+
+- code: bim_manager
+  title_matches:
+    - coordinadora?\s+bim
+    - coordinador\s+bim
+    - directora?\s+bim
+
+- code: bim_modeler
+  title_matches:
+    - modeladora?\s+bim
+    - auxiliar\s+bim
+
+- code: cad_drawer
+  title_matches:
+    - delineante
+
+- code: engineer
+  title_matches:
+    - ingenier(o|a)
+    - auxiliar
+
+- code: operations
+  title_matches:
+    - asistente\s+administrativ(o|a)
+    - asistente\s+de\s+gerencia
+
+- code: it
+  title_matches:
+    - soporte\s+sistemas
+    - programadora?\s+extern(o|a)
